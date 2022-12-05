@@ -6,6 +6,12 @@ script to generate churn model
 import os
 os.environ['QT_QPA_PLATFORM']='offscreen'
 import logging
+logging.basicConfig(
+    filename='.logs/info.log',
+    level=logging.INFO,
+    filemode='w',
+    format='%(name)s - %(levelname)s - %(message)s')
+
 import shap
 import joblib
 import pandas as pd
@@ -22,7 +28,6 @@ from sklearn.model_selection import GridSearchCV
 
 from sklearn.metrics import plot_roc_curve, classification_report
 
-logging
 
 
 def import_data(pth):
